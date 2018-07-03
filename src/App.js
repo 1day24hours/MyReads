@@ -13,7 +13,14 @@ class BooksApp extends React.Component {
   }
 
   moveBook = (book, shelf) => {
-
+    if(this.state.books) {
+      BooksAPI.update(book, shelf).then(() => {
+        book.shelf = shelf;
+        this.setState(state => ({
+          books: state.books.filter(b => b.id !== book.id).concat([book]) 
+        }))
+      })
+    }
   }
 
   componentDidMount() {
@@ -35,7 +42,10 @@ class BooksApp extends React.Component {
           </div>
         )}/>
           <Route path='search' render={() => (
-            <Search />
+            <Search
+              onMoveBook={this.moveBook}
+              booksOnShelf={this.state.books}
+            />
           )}/>
       </div>
     )
