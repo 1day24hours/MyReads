@@ -22,7 +22,6 @@ class BookShelf extends Component {
                                     <h2 className='bookshelf-title'>{shelvesTitleNames[index]}</h2>
                                     <div className='bookshelf-books'>
                                         <ol className='books-grid'>
-                                        {/* TypeError: Cannot read property 'sort' of undefined */}
                                             {this.props.booksOnShelf.sort(sortBy('title'))
                                                 .filter(book => book.shelf === shelf)
                                                 .map(book => (
