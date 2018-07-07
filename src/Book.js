@@ -22,7 +22,7 @@ class Book extends Component {
                     //判断 book.imageLinks 是否存在，不存在便为其指定默认封面。
                         backgroundImage: `url(${book.imageLinks ? book.imageLinks.thumbnail : "https://books.google.com/googlebooks/images/no_cover_thumb.gif"})` }}></div>
                     <div className="book-shelf-changer">
-                        <select value={book.shelf} onChange={(e => this.updateBook(e.target.value))} >
+                        <select value={book.shelf} onChange={(e) => this.updateBook(e.target.value)} >
                             <option value="move" disabled>Move to...</option>
                             <option value="currentlyReading">Currently Reading</option>
                             <option value="wantToRead">Want to Read</option>

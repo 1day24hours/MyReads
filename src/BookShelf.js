@@ -10,7 +10,7 @@ class BookShelf extends Component {
     }
     render() {
         const shelves = ['currentlyReading', 'wantToRead', 'read'];
-        const shelvesName = ['Currently Reading', 'Want To Read', 'Read'];
+        const shelvesTitleNames = ['Currently Reading', 'Want To Read', 'Read'];
         return (
             <div>
                 {shelves.map((shelf, index) => {
@@ -18,7 +18,7 @@ class BookShelf extends Component {
                         <div key={index} className="list-books-content">
                             <div>
                                 <div className='bookshelf'>
-                                    <h2 className='bookshelf-title'>{shelvesName[index]}</h2>
+                                    <h2 className='bookshelf-title'>{shelvesTitleNames[index]}</h2>
                                     <div className='bookshelf-books'>
                                         <ol className='books-grid'>
                                             {this.props.booksOnShelf.sort(sortBy('title'))

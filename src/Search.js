@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import * as BooksAPI from './BooksAPI'
-import Book from './Book'
-import sortBy from 'sort-by'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import * as BooksAPI from './BooksAPI';
+import Book from './Book';
+import sortBy from 'sort-by';
+import PropTypes from 'prop-types';
 
 class Search extends Component {
     static propTypes = {
-        booksOnshelf: PropTypes.array.isRequired,
+        booksOnShelf: PropTypes.array.isRequired,
         onMoveBook: PropTypes.func.isRequired
     }
 
@@ -26,7 +26,7 @@ class Search extends Component {
                     books = [];
                 }
                 books.map(book => (
-                    this.props.booksOnshelf.filter(b => b.id === book.id)
+                    this.props.booksOnShelf.filter(b => b.id === book.id)
                     .map(b => book.shelf = b.shelf)
                 ))
                 this.setState({ books });
