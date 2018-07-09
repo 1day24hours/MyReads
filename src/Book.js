@@ -29,7 +29,8 @@ class Book extends Component {
                 <div className="book-top">
                     <div className="book-cover" style={BookCoverStyle(book)}></div>
                     <div className="book-shelf-changer">
-                        <select value={book.shelf ? book.shelf : "none"} onChange={(e) => this.updateBook(e.target.value)} >
+                    {/* 当 book.shelf 不存在时，建议把图书书架默认值设置为 none，否则最终所有图书默认显示为 currentlyReading */}
+                        <select value={book.shelf ? book.shelf : "currentlyReading"} onChange={(e) => this.updateBook(e.target.value)} >
                             <option value="move" disabled>Move to...</option>
                             <option value="currentlyReading">Currently Reading</option>
                             <option value="wantToRead">Want to Read</option>
