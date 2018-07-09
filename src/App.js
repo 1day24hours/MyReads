@@ -26,6 +26,8 @@ class BooksApp extends React.Component {
   componentDidMount() {
     BooksAPI.getAll().then((books) => {
       this.setState({ books })
+    }).catch(e => {
+      console.log('发生错误！', e);
     })
   }
 
